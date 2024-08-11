@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Foldit:wght@100..900&family=Kalnia+Glaze:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+BE+WAL:wght@100..400&family=Reem+Kufi+Fun:wght@400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Foldit:wght@100..900&family=Kalnia+Glaze:wght@100..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+BE+WAL:wght@100..400&family=Reem+Kufi+Fun:wght@400..700&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Shadows+Into+Light&display=swap" rel="stylesheet">
+<title>Document</title>
+    <style>
+        :root{
+            --text-color:#474747;
+          }
+          *{
+            box-sizing:border-box;
+          }
+          body{
+            font-family:system-ui;
+            background-color:black;
+          }
+          .wraper{
+            max-width:1200px;
+            margin:auto;
+          }
+          .header{
+            
+            align-items:center;
+            line-height:1.5;
+            background-color:#F7F2EF;
+            border-radius:0.5rem;
+            display:flex;
+            justify-content:space-between;
+            padding: 1rem 1.3rem;
+          }
+          .navbar,.menu{
+            display:flex;
+            align-items:center;
+          }
+          .navbar{
+            gap:1rem;
+          }
+          .menu{
+            font-weight:500;
+            display:none;
+            gap:0.5rem;
+            font-size:15px;
+          }
+          
+          .contact-btn{
+            background-color:#FFED4F;
+            padding:0.2rem 1rem;
+            border-radius:1rem;
+            border:1px solid black;
+            box-shadow: 2px 2px 0px 0px black;
+            font-weight:500;
+            transition: transform 0.25s;
+            &:hover{
+             transform:scale(1.1);
+              cursor:pointer;
+            }
+          }
+          
+          
+          
+          .font-w-500{
+            font-weight:500;
+          }
+          .logo{
+            font-weight:500;
+            display:flex;
+            align-items:center;
+            gap:0.2rem;
+          }
+          
+          section{
+            margin-top:0.5rem;
+          }
+          .icon-burger{
+            display:block;
+          }
+          .section-img{
+            position:relative;
+            
+            overflow:hidden;
+            column-gap:2rem;
+            border-radius:0.5rem;
+            background-color:#f5f4f3;
+            padding:clamp(1rem,3vw,3rem) clamp(2rem,5vw,5rem);
+            display:grid;
+          
+          }
+          
+          img{
+            margin-top: 30px;
+            height:auto;
+            width:33%;
+            object-fit:cover;
+            border-radius: 50%;
+            position: relative;
+            left: 260px;
+            top: -65px;
+          }
+
+          @media screen and (max-width:758px){
+            img{
+                margin-top: 30px;
+                height:auto;
+                width:50%;
+                object-fit:cover;
+                border-radius: 50%;
+                position: relative;
+                left: 90px;
+              }
+
+              
+          }
+          
+          .image{
+   
+            DISPLAY:grid;
+            place-items:center;
+            position:relative;
+            
+          }
+          
+          h1{
+            font-size:clamp(20px,5vw + 10px,50px);
+            line-height: 1;
+            margin-bottom:0.5rem;
+          }
+          p{
+            color: var(--text-color);
+          }
+          
+          .texto{
+            position: relative;
+            top: 90px;
+            display:grid;
+            align-items:center;
+            JUSTIFY-ITEMS:START;
+           
+          }
+
+          @media  (min-width: 468px) {
+            .texto{
+                position: relative;
+                top: 180px;
+                display:grid;
+                align-items:center;
+                JUSTIFY-ITEMS:START;
+               
+              }
+          }
+          
+          
+          svg{
+            height:80px;
+            width:80px;
+          }
+          
+          .icon-card{
+            height:30px;
+            width:30px;
+          }
+          .title-card{
+            font-family: "Anton", sans-serif;
+            font-weight:600;
+            font-size:20px;
+          }
+          .p-card{
+            font-size:15px;
+            color:var(--text-color);
+          }
+          .reset-section{
+            grid-template-columns:auto;
+            gap:1rem;
+          }
+          .yellow{
+            background-color:#FFED4F;
+          }
+          .green{
+            background-color:#0DFFA8;
+          }
+          .violet{
+            background-color:#FFD9FE;
+          }
+          .blue{
+            background-color:#4ff9ff;
+          }
+          .orange{
+            background-color:#ffc44f;
+          }
+          .pink{
+            background-color:#ff7cc6;
+          }
+          .red{
+            background-color:#ff9b9b;
+          }
+          .section-img > * {
+            z-index: 3;
+          }
+          .section-img::after{
+            /*content:'';
+            height:10rem;
+            width:10rem;
+            background-color:#c099ff;
+            border-radius:50%;
+            filter:blur(80px);
+            position:absolute;
+            left:70%;
+            top:40%;
+            z-index:0; */
+          }
+          
+          .section-img::before{
+            
+            content:'';
+            height:10rem;
+            width:10rem;
+            background-color:#f6cd6d;
+            border-radius:50%;
+            filter:blur(80px);
+            position:absolute;
+            right:3%;
+            top:50%;
+            z-index:0;
+          }
+          
+          .card{
+           
+            border-radius:0.5rem;
+            padding:1rem 1rem;
+            display:grid;
+            gap:1rem;
+            justify-items:start;
+          }
+          .section-tres-columnas{
+            gap:0.5rem;
+            display:grid;
+            grid-template-columns:repeat(1,1fr);
+          }
+          
+          .btn-card{
+            display:flex;
+            align-items:center;
+            gap: 1rem;
+            padding: 0.2rem 0.5rem;
+            border-radius:1rem;
+            background-color:black;
+            color:white;
+            border:none;
+            transition:filter 0.2s;
+            cursor:pointer;
+            padding: 0.3rem 1rem;
+          }
+          .btn-card:hover{
+            filter:drop-shadow(2px 2px 0px lightgrey);
+          }
+          
+          .btn-card svg{
+            fill:white;
+          }
+          
+          .clip-path-square{
+           clip-path: polygon(0 45%, 40% 0, 82% 6%, 100% 25%, 100% 57%, 89% 68%, 100% 85%, 100% 97%, 85% 100%, 27% 100%, 12% 89%, 0% 85%);
+          }
+          
+          .brutal-btn{
+            COLOR:BLACK;
+            text-decoration: none;
+            FONT-WEIGHT:700;
+            PADDING:0.5REM 2REM;
+            BORDER-RADIUS:2REM;
+            BACKGROUND-COLOR:TRANSPARENT;
+            BORDER:1PX SOLID BLACK;
+            BOX-SHADOW:2PX 4PX 0PX 0PX BLACK;
+            transition: transform 0.25s;
+            &:hover{
+             transform:scale(1.1);
+              cursor:pointer;
+            }
+          }
+          .centrado{
+            place-items:Center;
+          }
+          
+          .blanco{
+            background-color:white;
+          }
+          .menu>div:hover{
+                text-decoration: underline;
+              text-underline-offset: 0.3rem;
+            cursor:pointer;
+                text-decoration-thickness: 0.2rem;
+          }
+          
+          
+          .borde-negro{
+            border-radius:1rem;
+            border:3px solid black;
+            clip-path:none;
+          }
+          @media (min-width: 750px){
+            .menu{
+              display:flex;
+            }
+            .section-tres-columnas{
+               grid-template-columns:repeat(3,1fr);
+            }
+            .icon-burger{
+              display:none;
+            }
+          }
+          
+          .icon{
+            font-family: "Permanent Marker", cursive;
+            color: #baadad  ;
+            font-weight: 700;
+            font-size: 50px;
+          }
+
+          .material-symbols-outlined{
+            font-size: 40px;
+           font-weight: 700;
+          }
+          .tit{
+            font-family: "Kalnia Glaze", serif;
+
+
+            margin-top: -10px;
+            font-size: 40px;
+          }
+
+          .ti{
+            font-family: "Anton", sans-serif;
+         color: #3a3434;
+            font-size: 30px;
+            font-weight: 1000;
+          }
+
+          .para{
+            margin-top: -100px;
+          }
+
+
+          @media screen and (min-width: 768px){
+            .tit{
+                font-family: "Kalnia Glaze", serif;
+                margin-top: -10px;
+                margin-bottom: -10px;
+            font-size: 80px;
+
+              }
+          }
+          .section{
+            position:relative;
+            overflow:hidden;
+            column-gap:10rem;
+            border-radius:0.5rem;
+            background-color:#f5f4f3;
+            padding:clamp(1rem,3vw,3rem) clamp(2rem,5vw,5rem);
+            display:grid;
+          }
+          .section1{
+            position:relative;
+            overflow:hidden;
+            column-gap:-1rem;
+            border-radius:0.5rem;
+            background-color:#f5f4f3;
+            padding:clamp(1rem,3vw,3rem) clamp(2rem,5vw,5rem);
+            display:flex;
+          
+          }
+          .icons{
+            position: relative;
+            left: -70px;
+            top: 70px;
+            width: 80px;
+          }
+
+       
+          @media screen and (min-width: 768px){
+          .icons{
+                position: relative;
+                left: 40px;
+                top: 99px;
+                width: 130px;
+              }
+          }
+
+     .p1{
+        font-family: "Sora", sans-serif;
+        font-size: 15px; 
+         color:#2f2f2f;
+         font-weight: 600;
+        text-size-adjust: 0px;
+        text-align: start ;
+        text-transform: capitalize;
+     }
+
+     .card1{
+        align-items: center;
+        justify-content: center;
+        border-radius:0.5rem;
+        padding:2rem 2rem;
+        display:grid;
+        gap:1rem;
+        justify-items:center;
+   
+      }
+
+      iframe {
+        max-width: 650px; /* Full width of the viewport */
+        max-height: 600px; /* Full height of the viewport */
+        width: 100%;
+        height: 100%;
+        border: none; /* Removes the border around the iframe */
+        margin-bottom: 100px;
+        position: relative;
+        right: 20px;
+        border: 2px solid #000000;
+        border-radius: 50px;
+        object-fit: contain;
+    }
+    </style>
+</head>
+<body>
+    <div class='wraper'>
+        <div class='header'> 
+          <div class='logo'>
+            <span class="icon">S</span>
+          </div>
+          <div class='navbar'>
+           
+            <a href="contact.html" class='contact-btn' style="text-decoration: none;" > CONTACT</a>
+           
+        
+            
+          </div>
+        </div>
+          
+          <section>
+            <div class='section-img'>
+              <div class='texto'>
+                <h4>HELLO 👋 I AM </h4>
+                <h1 class="tit"> Sanjay</h1>
+
+              </div>
+              <div class='image'>
+                <img src='av.jpg' >
+              </div>
+            </div>
+          </section>
+          
+
+
+          
+          
+           
+          <div class='card1' style=" background-color:#fbf1e4; margin-top:8px;">
+            
+            <div class='ti'>ABOUT ME</div>
+            <div class='p1'>
+                Hello, I'm Sanjay, a web and app developer with expertise in HTML, CSS, JavaScript, Flutter, Java, PHP, and Python. Holding a BSc in Computer Science with a focus on AI and ML, I’m passionate about creating responsive and immersive digital experiences. My work blends technical proficiency with creative design to build robust web applications and dynamic mobile apps that deliver both functionality and visual appeal.
+               </div>
+        </div>
+          
+
+
+          <section >
+            <div class='section-tres-columnas'>
+            
+                <div class='card yellow'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                        <path fill="#E65100" d="M41,5H7l3,34l14,4l14-4L41,5L41,5z"></path>
+                        <path fill="#FF6D00" d="M24 8L24 39.9 35.2 36.7 37.7 8z"></path>
+                        <path fill="#FFF" d="M24,25v-4h8.6l-0.7,11.5L24,35.1v-4.2l4.1-1.4l0.3-4.5H24z M32.9,17l0.3-4H24v4H32.9z"></path>
+                        <path fill="#EEE" d="M24,30.9v4.2l-7.9-2.6L15.7,27h4l0.2,2.5L24,30.9z M19.1,17H24v-4h-9.1l0.7,12H24v-4h-4.6L19.1,17z"></path>
+                    </svg>
+                    <div class='title-card'>HTML</div>
+                    <div class='p-card'>
+                        Experienced in HTML. Creating responsive and engaging websites. Let’s build something great!
+                    </div>
+                </div>
+                
+                
+                
+                <div class='card green'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="240" height="240" viewBox="0 0 48 48">
+                        <linearGradient id="TQDriqswrKwPOniLrPT12a_7gdY5qNXaKC0_gr1" x1="16.33" x2="32.293" y1="-2.748" y2="41.109" gradientUnits="userSpaceOnUse">
+                            <stop offset="0" stop-color="#2aa4f4"></stop>
+                            <stop offset="1" stop-color="#007ad9"></stop>
+                        </linearGradient>
+                        <path fill="url(#TQDriqswrKwPOniLrPT12a_7gdY5qNXaKC0_gr1)" d="M7.192,7.176l2.627,29.77c0.109,1.237,0.97,2.28,2.164,2.621l10.643,3.041	c0.898,0.257,1.849,0.257,2.747,0l10.643-3.041c1.194-0.341,2.055-1.383,2.164-2.621l2.627-29.77C40.911,6.006,39.99,5,38.816,5H9.184C8.01,5,7.089,6.006,7.192,7.176z"></path>
+                        <path fill="#35c1f1" d="M24,8v31.9l9.876-2.822c0.797-0.228,1.371-0.924,1.443-1.749l2.286-26.242	C37.656,8.502,37.196,8,36.609,8H24z"></path>
+                        <path fill="#fff" d="M33.1,13H24v4h4.9l-0.3,4H24v4h4.4l-0.3,4.5L24,30.9v4.2l7.9-2.6L32.6,21l0,0L33.1,13z"></path>
+                        <path fill="#d6e0e9" d="M24,13v4h-8.9l-0.3-4H24z M19.4,21l0.2,4H24v-4H19.4z M19.8,27h-4l0.3,5.5l7.9,2.6v-4.2l-4.1-1.4	L19.8,27z"></path>
+                        <path d="M33.1,13l-0.5,8l-0.7,11.5L24,35.1l-7.9-2.6L15.8,27h4l0.1,2.5l4.1,1.4l4.1-1.4l0.3-4.5H24h-4.4l-0.2-4H24h4.6l0.3-4H24h-8.9l-0.3-4H24H33.1 M34.164,12H33.1H24h-9.2h-1.078l0.081,1.075l0.3,4L14.172,18H15.1H24h3.822l-0.15,2H24h-4.6h-1.051 l0.052,1.05l0.2,4L18.649,26H15.8h-1.056l0.058,1.054l0.3,5.5l0.037,0.682l0.649,0.214l7.9,2.6L24,36.153l0.313-0.103l7.9-2.6 l0.644-0.212l0.041-0.677l0.7-11.5l0.5-7.998L34.164,12L34.164,12z M20.761,26H24h3.331l-0.185,2.769L24,29.843l-3.128-1.068 l-0.073-1.815L20.761,26L20.761,26z" opacity=".05"></path>
+                        <path d="M33.1,13l-0.5,8l-0.7,11.5L24,35.1l-7.9-2.6L15.8,27h4l0.1,2.5l4.1,1.4l4.1-1.4l0.3-4.5H24h-4.4l-0.2-4H24h4.6l0.3-4H24 h-8.9l-0.3-4H24H33.1 M33.632,12.5H33.1H24h-9.2h-0.539l0.04,0.537l0.3,4l0.035,0.463H15.1H24h4.361l-0.225,3H24h-4.6h-0.526 l0.026,0.525l0.2,4l0.024,0.475H19.6H24h3.866l-0.242,3.634L24,30.372l-3.614-1.234L20.3,26.98L20.28,26.5H19.8h-4h-0.528 l0.029,0.527l0.3,5.5l0.019,0.341l0.324,0.107l7.9,2.6L24,35.626l0.156-0.051l7.9-2.6l0.322-0.106l0.021-0.339l0.7-11.5l0.5-7.999 L33.632,12.5L33.632,12.5z" opacity=".07"></path>
+                    </svg>
+                    <div class='title-card'>CSS</div>
+                    <div class='p-card'>
+                        I know CSS and have created various projects as a freelancer. I design modern and responsive websites, enhancing user experience with creative styles and layouts.
+                      
+                    </div>
+                    
+                </div>
+                
+                 
+                <div class='card orange'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="498" height="498" viewBox="0 0 48 48">
+                        <path fill="#f7df1e" d="M6,42V6h36v36H6z"></path>
+                        <path fill="#000001" d="M29.538,32.947c0.692,1.124,1.444,2.201,3.037,2.201c1.338,0,2.04-0.665,2.04-1.585c0-1.101-0.726-1.492-2.198-2.133l-0.807-0.344c-2.329-0.988-3.878-2.226-3.878-4.841c0-2.41,1.845-4.244,4.728-4.244c2.053,0,3.528,0.711,4.592,2.573l-2.514,1.607c-0.553-0.988-1.151-1.377-2.078-1.377c-0.946,0-1.545,0.597-1.545,1.377c0,0.964,0.6,1.354,1.985,1.951l0.807,0.344C36.452,29.645,38,30.839,38,33.523C38,36.415,35.716,38,32.65,38c-2.999,0-4.702-1.505-5.65-3.368L29.538,32.947z M17.952,33.029c0.506,0.906,1.275,1.603,2.381,1.603c1.058,0,1.667-0.418,1.667-2.043V22h3.333v11.101c0,3.367-1.953,4.899-4.805,4.899c-2.577,0-4.437-1.746-5.195-3.368L17.952,33.029z"></path>
+                    </svg>
+                    <div class='title-card'>JAVASCRIPT</div>
+                    <div class='p-card'>
+                        I know JavaScript and have experience building dynamic and interactive web applications. From handling user events to integrating APIs, I use JavaScript to create engaging and functional features.
+                    </div>
+
+                </div>
+                
+                <div class='card blue'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="480" height="480" viewBox="0 0 48 48">
+                        <linearGradient id="rxvnHhZwKGr6xZAKUG_uUa_v6gAXUBr2rra_gr1" x1="-2.354" x2="64.603" y1="8.784" y2="47.442" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#262626" stop-opacity="0"></stop><stop offset="1" stop-color="#262626" stop-opacity=".8"></stop></linearGradient><path fill="url(#rxvnHhZwKGr6xZAKUG_uUa_v6gAXUBr2rra_gr1)" d="M24,11C11.297,11,1,16.82,1,24s10.297,13,23,13s23-5.82,23-13S36.703,11,24,11z"></path><linearGradient id="rxvnHhZwKGr6xZAKUG_uUb_v6gAXUBr2rra_gr2" x1="5.143" x2="26.258" y1="17.563" y2="38.678" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#262626" stop-opacity="0"></stop><stop offset="1" stop-color="#262626" stop-opacity=".8"></stop></linearGradient><path fill="url(#rxvnHhZwKGr6xZAKUG_uUb_v6gAXUBr2rra_gr2)" d="M17.542,19.465c-0.27-0.318-0.593-0.571-0.936-0.791c-0.044-0.032-0.071-0.075-0.12-0.104	c-0.096-0.058-0.199-0.101-0.3-0.149c-0.035-0.017-0.069-0.036-0.104-0.052c-0.233-0.103-0.475-0.187-0.724-0.245	c-0.088-0.021-0.178-0.032-0.267-0.047c-0.19-0.032-0.381-0.053-0.575-0.063C14.471,18.013,14.427,18,14.382,18h-0.13H9.248	L7.066,30h1.38c0.966,0,1.795-0.691,1.968-1.642L10.661,27h2.069h0.805c2.454,0,4.528-1.757,4.932-4.178	C18.668,21.619,18.331,20.395,17.542,19.465z M11.206,24l0.546-3h2.63c0.461,0,0.744,0.253,0.871,0.404	c0.128,0.15,0.33,0.471,0.255,0.925C15.347,23.297,14.517,24,13.535,24H11.206z"></path><linearGradient id="rxvnHhZwKGr6xZAKUG_uUc_v6gAXUBr2rra_gr3" x1="16.643" x2="37.758" y1="6.063" y2="27.178" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#262626" stop-opacity="0"></stop><stop offset="1" stop-color="#262626" stop-opacity=".8"></stop></linearGradient><path fill="url(#rxvnHhZwKGr6xZAKUG_uUc_v6gAXUBr2rra_gr3)" d="M40.542,19.465c-0.27-0.318-0.593-0.571-0.936-0.791c-0.044-0.032-0.071-0.075-0.12-0.104	c-0.096-0.058-0.199-0.101-0.3-0.149c-0.035-0.017-0.069-0.036-0.104-0.052c-0.233-0.103-0.475-0.187-0.724-0.245	c-0.088-0.021-0.178-0.032-0.267-0.047c-0.19-0.032-0.381-0.053-0.575-0.063C37.471,18.013,37.427,18,37.382,18h-0.13h-5.004	l-2.182,12h1.38c0.966,0,1.795-0.691,1.968-1.642L33.661,27h2.069h0.805c2.454,0,4.528-1.757,4.932-4.178	C41.668,21.619,41.331,20.395,40.542,19.465z M34.206,24l0.546-3h2.63c0.461,0,0.744,0.253,0.871,0.404	c0.128,0.15,0.33,0.471,0.255,0.925C38.347,23.297,37.517,24,36.535,24H34.206z"></path><linearGradient id="rxvnHhZwKGr6xZAKUG_uUd_v6gAXUBr2rra_gr4" x1="11.728" x2="32.843" y1="10.978" y2="32.093" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#262626" stop-opacity="0"></stop><stop offset="1" stop-color="#262626" stop-opacity=".8"></stop></linearGradient><path fill="url(#rxvnHhZwKGr6xZAKUG_uUd_v6gAXUBr2rra_gr4)" d="M28.151,20.315C27.364,19.438,26.197,19,25.02,19h-0.599l1-4h-1.531	c-0.918,0-1.718,0.625-1.94,1.515L19.079,28h1.53c0.918,0,1.718-0.625,1.94-1.515L23.671,22h1.515c0.434,0,0.687,0.25,0.799,0.398	s0.282,0.46,0.143,0.958L25.075,28h3.075l0.882-3.901C29.412,22.767,29.092,21.363,28.151,20.315z"></path>
+                        </svg>
+                    <div class='title-card'>PHP</div>
+                    <div class='p-card'>
+                        I know PHP and use it to create powerful server-side scripts. From handling forms to managing databases, my PHP skills help in building robust and dynamic web applications.
+                       
+                    </div>
+                    
+                </div>
+                
+                <div class='card pink'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                        <polygon fill="#40c4ff" points="26,4 6,24 12,30 38,4"></polygon>
+                        <polygon fill="#40c4ff" points="38,22 27,33 21,27 26,22"></polygon>
+                        <rect width="8.485" height="8.485" x="16.757" y="28.757" fill="#03a9f4" transform="rotate(-45.001 21 33)"></rect>
+                        <polygon fill="#01579b" points="38,44 26,44 21,39 27,33"></polygon>
+                        <polygon fill="#084994" points="21,39 30,36 27,33"></polygon>
+                    </svg>
+                    <div class='title-card'>FLUTTER</div>
+                    <div class='p-card'>A UI toolkit for building natively compiled applications for mobile, web, and desktop from a single codebase.</div>
+                </div>
+                
+                <div class='card red'>
+                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="48" height="48" viewBox="0 0 48 48">
+                        <path fill="#0277BD" d="M24.047,5c-1.555,0.005-2.633,0.142-3.936,0.367c-3.848,0.67-4.549,2.077-4.549,4.67V14h9v2H15.22h-4.35c-2.636,0-4.943,1.242-5.674,4.219c-0.826,3.417-0.863,5.557,0,9.125C5.851,32.005,7.294,34,9.931,34h3.632v-5.104c0-2.966,2.686-5.896,5.764-5.896h7.236c2.523,0,5-1.862,5-4.377v-8.586c0-2.439-1.759-4.263-4.218-4.672C27.406,5.359,25.589,4.994,24.047,5z M19.063,9c0.821,0,1.5,0.677,1.5,1.502c0,0.833-0.679,1.498-1.5,1.498c-0.837,0-1.5-0.664-1.5-1.498C17.563,9.68,18.226,9,19.063,9z"></path><path fill="#FFC107" d="M23.078,43c1.555-0.005,2.633-0.142,3.936-0.367c3.848-0.67,4.549-2.077,4.549-4.67V34h-9v-2h9.343h4.35c2.636,0,4.943-1.242,5.674-4.219c0.826-3.417,0.863-5.557,0-9.125C41.274,15.995,39.831,14,37.194,14h-3.632v5.104c0,2.966-2.686,5.896-5.764,5.896h-7.236c-2.523,0-5,1.862-5,4.377v8.586c0,2.439,1.759,4.263,4.218,4.672C19.719,42.641,21.536,43.006,23.078,43z M28.063,39c-0.821,0-1.5-0.677-1.5-1.502c0-0.833,0.679-1.498,1.5-1.498c0.837,0,1.5,0.664,1.5,1.498C29.563,38.32,28.899,39,28.063,39z"></path>
+                        </svg>
+                    <div class='title-card'>Python Programming</div>
+                    <div class='p-card'>A high-level, interpreted language known for its readability and wide range of applications.</div>
+                </div>
+                
+              
+            </div>  
+          </section>
+          
+        
+          
+
+          <section>
+            <div class='section1 '>
+              
+             <a href="https://github.com/Sanjay434343" class="icons"><img width="240" height="240" src="https://img.icons8.com/ios-glyphs/240/github.png" alt="github"/></a>
+             <a href="https://www.instagram.com/erdaspire?igsh=MWgzcWhtNWJhOWt2aQ==" class="icons"><img width="256" height="256" src="https://img.icons8.com/cute-clipart/256/instagram-new.png" alt="instagram-new"/></a>
+             <a href="https://www.linkedin.com/in/sanjay-sanjay-b69390287?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="icons"><img width="240" height="240" src="https://img.icons8.com/fluency/240/linkedin.png" alt="linkedin"/></a>
+             <a href="https://wa.me/+919342613649" target="_blank" class="icons"><img width="240" height="240" src="https://img.icons8.com/color/240/whatsapp--v1.png" alt="whatsapp--v1"/></a>
+              
+            </div>
+          </section>
+          
+          
+          </div>
+
+
+          <script>
+            // script.js
+gsap.registerPlugin(ScrollTrigger);
+
+// Hero section animations
+gsap.from("#hero h2", {
+    duration: 1.5,
+    y: -100,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#hero",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+    }
+});
+
+gsap.from("#hero p", {
+    duration: 1.5,
+    y: 100,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#hero",
+        start: "top 60%",
+        end: "bottom 30%",
+        scrub: true,
+    }
+});
+
+// Features section animations
+gsap.from(".feature-card", {
+    duration: 1.5,
+    y: 100,
+    opacity: 0,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#features",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+    }
+});
+
+// Gameplay section animation
+gsap.from("#gameplay", {
+    duration: 1.5,
+    y: 100,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#gameplay",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+    }
+});
+
+// Testimonials section animation
+gsap.from(".testimonial", {
+    duration: 1.5,
+    y: 100,
+    opacity: 0,
+    stagger: 0.2,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#testimonials",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+    }
+});
+
+// Newsletter section animation
+gsap.from("#newsletter", {
+    duration: 1.5,
+    y: 100,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#newsletter",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+    }
+});
+
+// CTA section animation
+gsap.from("#cta", {
+    duration: 1.5,
+    y: 100,
+    opacity: 0,
+    ease: "power3.out",
+    scrollTrigger: {
+        trigger: "#cta",
+        start: "top 80%",
+        end: "bottom 50%",
+        scrub: true,
+    }
+});
+
+// Video play on scroll
+window.addEventListener('scroll', () => {
+    const video = document.getElementById('game-video');
+    const videoTop = video.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    if (videoTop < windowHeight * 0.5 && video.paused) {
+        video.play();
+    } else if (videoTop > windowHeight * 0.5 && !video.paused) {
+        video.pause();
+    }
+});
+
+          </script>
+</body>
+</html>
